@@ -3,20 +3,33 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+import ToDo from './Todo'
 
+function App() {
+ const time = 40;
   return (
-    <>
-      <h1>Hello World</h1>
-      <School></School> 
-      <Person></Person>
-      <School></School>
-      <Countries></Countries>
-      <Developers name="abc" dept="IT"></Developers>
-      <Developers name="def" dept="HR"></Developers>
-      <Developers name="ghi"></Developers>
-    </>
+    <div>
+      <ToDo learn="React" idDone={true} time={time}></ToDo>
+      <ToDo learn="JS" idDone={true} time={time}></ToDo>
+      <ToDo learn="React" isDone={false} ></ToDo>
+     </div>
   )
+
+  // return (
+  //   <>
+  //     <h1>Hello</h1>
+  //     <School></School> 
+  //     <Person></Person>
+  //     <School></School>
+  //     <Countries></Countries>
+  //     <Developers name="abc" dept="IT"></Developers>
+  //     <Developers name="def" dept="HR"></Developers>
+  //     <Developers name="ghi"></Developers>
+  //     <Players name="jkl" runs="100"></Players>
+  //     <Players name="mno" runs="600"></Players>
+  //     <Players name="pqr" runs="500"></Players>
+  //   </>
+  // )
 }
 
 function Person(){
@@ -52,7 +65,7 @@ const countryStyle = {
   )
 }
 
-function Developers(props){
+function Developers(props){ // props is an object
   return (
     <div style={{color: 'yellow' , backgroundColor: 'black' }}>
       <h3 >Developer 1 : {props.name} - {props.dept}</h3>
@@ -60,15 +73,14 @@ function Developers(props){
   )
 }
 
-function Players() {
-  Style = {
-    
-  }
+function Players({name, runs}) {  // destructuring
+
   return (
-    <div>
-      <h3>Player 1</h3>
-      <h3>Player 2</h3>
-      <h3>Player 3</h3>
+    <div Style = {{
+      border: '2px solid yellow',
+      borderRadius: '20px'
+    }}>
+      <h3>Player  : {name} : {runs}</h3>
     </div>
   )
 } 
