@@ -3,17 +3,60 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-import ToDo from './Todo'
+import Library from './Component/Library'
+// import ToDo from './Todo'
+// import Actor from './Actor'
+// import Singer from './Singer'
 
 function App() {
- const time = 40;
+
+  const books = [
+    { id: 1, name: "Physics", price: 250 },
+    { id: 2, name: "Chemistry", price: 300 },
+    { id: 3, name: "Maths", price: 200 },   
+  ];
+
   return (
-    <div>
-      <ToDo learn="React" idDone={true} time={time}></ToDo>
-      <ToDo learn="JS" idDone={true} time={time}></ToDo>
-      <ToDo learn="React" isDone={false} ></ToDo>
-     </div>
+    <>
+      <Library books={books}></Library>
+      </>
   )
+}
+  // Singer.jsx
+  // const singers = [
+  //   { id: 1, name: "Tom", age: 20 },
+  //   { id: 2, name: "Morgan", age: 25 },
+  //   { id: 3, name: "Jack", age: 30 },
+  // ];
+
+  // return (
+  //   <>
+  //     {
+  //           singers.map(singer =>       
+  //        <Singer key={singer.id} singer={singer}></Singer>
+       
+  //     )
+      
+  //     }
+
+  //   </>
+  // );
+
+
+  // Actor.jsx
+  // const actors = ["Tom", "Morgan", "Jack"]
+  // return  actors.map((actor) => <Actor name = {actor}></Actor> )
+  
+  // Todo.jsx
+//  const time = 40;
+//   return (
+//     <div>
+//       <ToDo learn="React" idDone={true} time={time}></ToDo>
+//       <ToDo learn="JS" idDone={true} time={time}></ToDo>
+//       <ToDo learn="React" isDone={false} ></ToDo>
+//      </div>
+//   )
+
 
   // return (
   //   <>
@@ -30,7 +73,7 @@ function App() {
   //     <Players name="pqr" runs="500"></Players>
   //   </>
   // )
-}
+
 
 function Person(){
   const age = 20
