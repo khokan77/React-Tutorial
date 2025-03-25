@@ -7,21 +7,50 @@ import Library from './Component/Library'
 // import ToDo from './Todo'
 // import Actor from './Actor'
 // import Singer from './Singer'
+import Counter from './Component/Counter'
 
 function App() {
 
-  const books = [
-    { id: 1, name: "Physics", price: 250 },
-    { id: 2, name: "Chemistry", price: 300 },
-    { id: 3, name: "Maths", price: 200 },   
-  ];
+ 
+  return(
+   <>
+    <Counter></Counter>
+  </>
+)
 
-  return (
-    <>
-      <Library books={books}></Library>
-      </>
-  )
-}
+// event handler
+
+// function onClickHandler(){
+//   alert("clicked4")
+//  }
+
+// function onClickHandler2(num){
+//   const result = num + 7
+//   alert("clicked5 " + result)
+// }
+
+//   return (
+//     <>
+//      <button onClick={() => console.log("clicked")}>Click Me</button>
+//      <button onClick={() => alert("clicked2")}>Click Me2</button>
+//      <button onClick={function(){console.log("clicked3")}}>Click Me3</button>
+//      <button onClick={onClickHandler}>Click Me4</button>
+//      <button onClick={() => onClickHandler2(5)}>Click Me5</button>
+//     </>
+//   )
+
+  // const books = [
+  //   { id: 1, name: "Physics", price: 250 },
+  //   { id: 2, name: "Chemistry", price: 300 },
+  //   { id: 3, name: "Maths", price: 200 },   
+  // ];
+
+  // return (
+  //   <>
+  //     <Library books={books}></Library>
+  //     </>
+  // )
+
   // Singer.jsx
   // const singers = [
   //   { id: 1, name: "Tom", age: 20 },
@@ -74,7 +103,7 @@ function App() {
   //   </>
   // )
 
-
+}
 function Person(){
   const age = 20
   return (
