@@ -41,7 +41,14 @@
   color: #888;
 }
 
-.school{
+.school {
   border: 2px solid tomato;
   border-radius: 10px;
+}
+
+.card {
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
 }

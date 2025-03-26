@@ -1,48 +1,72 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Suspense, useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
-import Library from './Component/Library'
-// import ToDo from './Todo'
+import Library from "./Component/Library";
+// im ort ToDo from './Todo'
 // import Actor from './Actor'
 // import Singer from './Singer'
-import Counter from './Component/Counter'
+import Counter from "./Component/Counter";
+import Batsman from "./Component/Batsman";
+import UserApi from "./Component/UserApi";
+import UserApi2 from "./Component/UserAPi2";
+
+const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
+  (response) => response.json()
+);
+
+const fetchUser2 = async () => {
+  const response = await fetch(
+    "https://jsonplaceholder.typicode.com/users"
+  ).then((response) => response.json());
+  return response;
+};
 
 function App() {
+  const usersPromise = fetchUser2();
 
- 
-  return(
-   <>
-    <Counter></Counter>
-  </>
-)
+  return (
+    <>
+      {/* async way */}
+      <Suspense fallback={<div>Loading...</div>}>
+        <UserApi2 usersPromise={usersPromise}></UserApi2>
+      </Suspense>
+      {/* sync way */}
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <UserApi fetchUsers={fetchUsers}></UserApi>
+      </Suspense> */}
+      <Batsman></Batsman>
+      // Count Component
+      <Counter></Counter>
+    </>
+  );
 
-// event handler
+  // event handler
 
-// function onClickHandler(){
-//   alert("clicked4")
-//  }
+  // function onClickHandler(){
+  //   alert("clicked4")
+  //  }
 
-// function onClickHandler2(num){
-//   const result = num + 7
-//   alert("clicked5 " + result)
-// }
+  // function onClickHandler2(num){
+  //   const result = num + 7
+  //   alert("clicked5 " + result)
+  // }
 
-//   return (
-//     <>
-//      <button onClick={() => console.log("clicked")}>Click Me</button>
-//      <button onClick={() => alert("clicked2")}>Click Me2</button>
-//      <button onClick={function(){console.log("clicked3")}}>Click Me3</button>
-//      <button onClick={onClickHandler}>Click Me4</button>
-//      <button onClick={() => onClickHandler2(5)}>Click Me5</button>
-//     </>
-//   )
+  //   return (
+  //     <>
+  //      <button onClick={() => console.log("clicked")}>Click Me</button>
+  //      <button onClick={() => alert("clicked2")}>Click Me2</button>
+  //      <button onClick={function(){console.log("clicked3")}}>Click Me3</button>
+  //      <button onClick={onClickHandler}>Click Me4</button>
+  //      <button onClick={() => onClickHandler2(5)}>Click Me5</button>
+  //     </>
+  //   )
 
   // const books = [
   //   { id: 1, name: "Physics", price: 250 },
   //   { id: 2, name: "Chemistry", price: 300 },
-  //   { id: 3, name: "Maths", price: 200 },   
+  //   { id: 3, name: "Maths", price: 200 },
   // ];
 
   // return (
@@ -61,36 +85,34 @@ function App() {
   // return (
   //   <>
   //     {
-  //           singers.map(singer =>       
+  //           singers.map(singer =>
   //        <Singer key={singer.id} singer={singer}></Singer>
-       
+
   //     )
-      
+
   //     }
 
   //   </>
   // );
 
-
   // Actor.jsx
   // const actors = ["Tom", "Morgan", "Jack"]
   // return  actors.map((actor) => <Actor name = {actor}></Actor> )
-  
-  // Todo.jsx
-//  const time = 40;
-//   return (
-//     <div>
-//       <ToDo learn="React" idDone={true} time={time}></ToDo>
-//       <ToDo learn="JS" idDone={true} time={time}></ToDo>
-//       <ToDo learn="React" isDone={false} ></ToDo>
-//      </div>
-//   )
 
+  // Todo.jsx
+  //  const time = 40;
+  //   return (
+  //     <div>
+  //       <ToDo learn="React" idDone={true} time={time}></ToDo>
+  //       <ToDo learn="JS" idDone={true} time={time}></ToDo>
+  //       <ToDo learn="React" isDone={false} ></ToDo>
+  //      </div>
+  //   )
 
   // return (
   //   <>
   //     <h1>Hello</h1>
-  //     <School></School> 
+  //     <School></School>
   //     <Person></Person>
   //     <School></School>
   //     <Countries></Countries>
@@ -102,58 +124,65 @@ function App() {
   //     <Players name="pqr" runs="500"></Players>
   //   </>
   // )
-
 }
-function Person(){
-  const age = 20
-  return (
-    <p>I am a person {age}</p>
-  )
+function Person() {
+  const age = 20;
+  return <p>I am a person {age}</p>;
 }
 
-function School(){
+function School() {
   return (
-    <div>    
-      <p className='school'>My school is XYZ</p>
+    <div>
+      <p className="school">My school is XYZ</p>
       <ul>
-        <li><Person></Person></li> 
+        <li>
+          <Person></Person>
+        </li>
         <li>Banana</li>
       </ul>
     </div>
-  )
+  );
 }
 
-function Countries(){
-const countryStyle = {
-  border: '2px solid green',
-  borderRadius: '20px',
-}
+function Countries() {
+  const countryStyle = {
+    border: "2px solid green",
+    borderRadius: "20px",
+  };
 
   return (
     <div style={countryStyle}>
       <p>India</p>
       <p>USA</p>
     </div>
-  )
+  );
 }
 
-function Developers(props){ // props is an object
+function Developers(props) {
+  // props is an object
   return (
-    <div style={{color: 'yellow' , backgroundColor: 'black' }}>
-      <h3 >Developer 1 : {props.name} - {props.dept}</h3>
+    <div style={{ color: "yellow", backgroundColor: "black" }}>
+      <h3>
+        Developer 1 : {props.name} - {props.dept}
+      </h3>
     </div>
-  )
+  );
 }
 
-function Players({name, runs}) {  // destructuring
+function Players({ name, runs }) {
+  // destructuring
 
   return (
-    <div Style = {{
-      border: '2px solid yellow',
-      borderRadius: '20px'
-    }}>
-      <h3>Player  : {name} : {runs}</h3>
+    <div
+      Style={{
+        border: "2px solid yellow",
+        borderRadius: "20px",
+      }}
+    >
+      <h3>
+        Player : {name} : {runs}
+      </h3>
     </div>
-  )
-} 
-export default App
+  );
+}
+export default App;
