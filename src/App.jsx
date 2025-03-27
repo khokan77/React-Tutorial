@@ -3,14 +3,18 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 
-import Library from "./Component/Library";
+import Library from "./components/Library";
 // im ort ToDo from './Todo'
 // import Actor from './Actor'
 // import Singer from './Singer'
-import Counter from "./Component/Counter";
-import Batsman from "./Component/Batsman";
-import UserApi from "./Component/UserApi";
-import UserApi2 from "./Component/UserAPi2";
+import Counter from "./components/Counter";
+import Batsman from "./components/Batsman";
+import UserApi from "./components/UserApi";
+import UserApi2 from "./components/UserAPi2";
+import  Posts  from "./components/Posts";
+import Players  from "./components/Players";
+import { Test } from "./components/Test";
+import Countries from "./components/Countries/Countries";
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
   (response) => response.json()
@@ -23,24 +27,52 @@ const fetchUser2 = async () => {
   return response;
 };
 
-function App() {
-  const usersPromise = fetchUser2();
+const fetchPosts = async() => {
+  const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  return res.json();
+}
 
+const countriesPromise = fetch("https://restcountries.com/v3.1/independent?status=true").then (res => res.json())
+  
+function App() {
   return (
     <>
-      {/* async way */}
-      <Suspense fallback={<div>Loading...</div>}>
-        <UserApi2 usersPromise={usersPromise}></UserApi2>
+      <Suspense fallback={<h3>KK loading..</h3>}>
+      <Countries countriesPromise={countriesPromise}></Countries>
       </Suspense>
+      
+    </>
+
+    );
+}
+
+// function App() {
+  // const usersPromise = fetchUser2();
+  // const postPromise = fetchPosts();
+
+  // return (
+  //   <>
+
+       {/* <Test></Test> */}
+      {/* Before v19 it was used */}
+      {/* <Players></Players>  */}
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <Posts postPromise={postPromise}></Posts>
+      </Suspense> */}
+        
+      {/* async way */}
+      {/* <Suspense fallback={<div>Loading...</div>}>
+        <UserApi2 usersPromise={usersPromise}></UserApi2>
+      </Suspense> */}
       {/* sync way */}
       {/* <Suspense fallback={<div>Loading...</div>}>
         <UserApi fetchUsers={fetchUsers}></UserApi>
       </Suspense> */}
       <Batsman></Batsman>
-      // Count Component
+       {/* Count Component */}
       <Counter></Counter>
-    </>
-  );
+  //   </>
+  // );
 
   // event handler
 
@@ -124,65 +156,65 @@ function App() {
   //     <Players name="pqr" runs="500"></Players>
   //   </>
   // )
-}
-function Person() {
-  const age = 20;
-  return <p>I am a person {age}</p>;
-}
+// }
+// function Person() {
+//   const age = 20;
+//   return <p>I am a person {age}</p>;
+// }
 
-function School() {
-  return (
-    <div>
-      <p className="school">My school is XYZ</p>
-      <ul>
-        <li>
-          <Person></Person>
-        </li>
-        <li>Banana</li>
-      </ul>
-    </div>
-  );
-}
+// function School() {
+//   return (
+//     <div>
+//       <p className="school">My school is XYZ</p>
+//       <ul>
+//         <li>
+//           <Person></Person>
+//         </li>
+//         <li>Banana</li>
+//       </ul>
+//     </div>
+//   );
+// }
 
-function Countries() {
-  const countryStyle = {
-    border: "2px solid green",
-    borderRadius: "20px",
-  };
+// function Countries() {
+//   const countryStyle = {
+//     border: "2px solid green",
+//     borderRadius: "20px",
+//   };
 
-  return (
-    <div style={countryStyle}>
-      <p>India</p>
-      <p>USA</p>
-    </div>
-  );
-}
+//   return (
+//     <div style={countryStyle}>
+//       <p>India</p>
+//       <p>USA</p>
+//     </div>
+//   );
+// }
 
-function Developers(props) {
-  // props is an object
-  return (
-    <div style={{ color: "yellow", backgroundColor: "black" }}>
-      <h3>
-        Developer 1 : {props.name} - {props.dept}
-      </h3>
-    </div>
-  );
-}
+// function Developers(props) {
+//   // props is an object
+//   return (
+//     <div style={{ color: "yellow", backgroundColor: "black" }}>
+//       <h3>
+//         Developer 1 : {props.name} - {props.dept}
+//       </h3>
+//     </div>
+//   );
+// }
 
-function Players({ name, runs }) {
-  // destructuring
+// function Players({ name, runs }) {
+//   // destructuring
 
-  return (
-    <div
-      Style={{
-        border: "2px solid yellow",
-        borderRadius: "20px",
-      }}
-    >
-      <h3>
-        Player : {name} : {runs}
-      </h3>
-    </div>
-  );
-}
+//   return (
+//     <div
+//       Style={{
+//         border: "2px solid yellow",
+//         borderRadius: "20px",
+//       }}
+//     >
+//       <h3>
+//         Player : {name} : {runs}
+//       </h3>
+//     </div>
+//   );
+// }
 export default App;
