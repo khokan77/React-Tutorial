@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React</title>
+    <script type="text/javascript">
+      let count = 0;
+      const handleClick = () => {
+        count++;
+        document.getElementById("myCount").innerHTML = `Count: ${count}`;
+      };
+    </script>
+  </head>
+  <body>
+    <div id="myDiv">
+      <p id="myCount">Count : 0</p>
+      <button onclick="handleClick()">Add Me</button>
+    </div>
+    <div id="myDivRoot"></div>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel" src="./React.js"></script>
+  </body>
+</html>

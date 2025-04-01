@@ -14,7 +14,7 @@ const Country = ({ country, handleClickVisited, handleFLagVisited }) => {
       <p>Country : {country.name.common} </p>
       <img src={country.flags.png}></img>
       <p>{country.independent ? "free" : "not free"}</p>
-      <p>population: {country.population}</p>
+      <p className="bg-red-300">population: {country.population}</p>
       <button
         className={visited ? "btn-visited" : "btn-not-visited"}
         onClick={onClickVisited}
