@@ -39,9 +39,16 @@ const Age = (props) => {
 // ReactDOM.createRoot(document.getElementById("myDivRoot")).render(newElement);
 // ReactDOM.createRoot(document.getElementById("myDivRoot")).render(myFirstFun());
 
-ReactDOM.createRoot(document.getElementById("myDivRoot")).render(
+const root = ReactDOM.createRoot(document.getElementById("myDivRoot"));
+root.render(
   <>
     <MyFirstFun name={"Hasib"}></MyFirstFun>
     <Age age="16"></Age>
   </>
 );
+
+const root2 = ReactDOM.createRoot(document.getElementById("myDivTime"));
+setInterval(() => {
+  const element = <h1>{new Date().toLocaleTimeString("bn-BD")}</h1>;
+  root2.render(element);
+}, 1000);

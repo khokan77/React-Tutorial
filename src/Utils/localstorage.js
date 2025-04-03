@@ -9,8 +9,24 @@ const getCartFromLocalStorage = () => {
 const setCartToLocalStorage = (id) => {
   const cart = getCartFromLocalStorage();
   const newCart = [...cart, id];
-  const stringifyData = JSON.stringify(newCart);
+  saveToLocalStorage(newCart);
+};
+
+const saveToLocalStorage = (cart) => {
+  const stringifyData = JSON.stringify(cart);
   localStorage.setItem("cart", stringifyData);
 };
 
-export { getCartFromLocalStorage, setCartToLocalStorage };
+const removeFromStorge = (id) => {
+  const cart = getCartFromLocalStorage();
+  if (cart) {
+    const remaingCart = cart.filter((remaingid) => remaingid !== id);
+    saveToLocalStorage(remaingCart);
+  }
+};
+
+export {
+  getCartFromLocalStorage,
+  setCartToLocalStorage,
+  removeFromStorge as removeCart,
+};
