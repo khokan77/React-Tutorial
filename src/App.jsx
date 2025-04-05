@@ -48,24 +48,25 @@ const bottlesPromise = fetch("bottles.json").then((res) => res.json());
 
 function App() {
   return (
-    <>
+    <div>
+      {/* <ErrorBoundary fallback={<h4>Eroor found..</h4>}>
+        <Suspense>
+          <Bottles bottlesPromise={bottlesPromise}></Bottles>
+        </Suspense>
+      </ErrorBoundary> */}
       {/* <Suspense fallback={<h3>KK loading..</h3>}>
       <Countries countriesPromise={countriesPromise}></Countries>
       </Suspense> */}
       {/* <Products></Products> old way to fetch data */}
-
       {/* New way to fetch data in v19 */}
       {/* <ErrorBoundary fallback={<h2> Error found..</h2>}>
         <Suspense fallback={<h2>Loading..</h2>}>
           <Products2 fetchProducts={fetchProducts}></Products2>
         </Suspense>
       </ErrorBoundary> */}
-      <ErrorBoundary fallback={<h4>Eroor found..</h4>}>
-        <Suspense>
-          <Bottles bottlesPromise={bottlesPromise}></Bottles>
-        </Suspense>
-      </ErrorBoundary>
-    </>
+      {/* Count Component  */}
+      <Counter></Counter>;
+    </div>
   );
 }
 
@@ -107,11 +108,10 @@ function App() {
         <UserApi fetchUsers={fetchUsers}></UserApi>
       </Suspense> */
 }
-<Batsman></Batsman>;
 {
-  /* Count Component */
+  /* <Batsman></Batsman>; */
 }
-<Counter></Counter>;
+
 //   </>
 // );
 

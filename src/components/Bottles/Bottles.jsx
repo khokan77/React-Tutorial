@@ -41,7 +41,7 @@ const Bottles = ({ bottlesPromise }) => {
   return (
     <>
       <div>{bottles.length}</div>
-      <div>Cart Added: {cart.length}</div>
+      <div className="bg-amber-300">Cart Added: {cart.length}</div>
       <div>
         <Cart handleRemoveCart={handleRemoveCart} cart={cart}></Cart>
       </div>
