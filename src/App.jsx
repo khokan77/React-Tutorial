@@ -19,6 +19,8 @@ import Products from "./components/Products/Products";
 import Products2 from "./components/Products/Products2";
 import { ErrorBoundary } from "react-error-boundary";
 import Bottles from "./components/Bottles/Bottles";
+import NavBar from "./components/NavBar/NavBar";
+import Blogs from "./components/Blogs/Blogs";
 
 const fetchUsers = fetch("https://jsonplaceholder.typicode.com/users").then(
   (response) => response.json()
@@ -36,8 +38,7 @@ const fetchPosts = async () => {
   return res.json();
 };
 
-const countriesPromise = fetch(
-  "https://restcountries.com/v3.1/independent?status=true"
+const countriesPromise = fetch("https://restcountries.com/v3.1/independent?status=true"
 ).then((res) => res.json());
 
 const fetchProducts = fetch("https://fakestoreapi.com/products").then((res) =>
@@ -49,6 +50,8 @@ const bottlesPromise = fetch("bottles.json").then((res) => res.json());
 function App() {
   return (
     <div>
+      <NavBar></NavBar>
+      <Blogs></Blogs>
       {/* <ErrorBoundary fallback={<h4>Eroor found..</h4>}>
         <Suspense>
           <Bottles bottlesPromise={bottlesPromise}></Bottles>
@@ -65,7 +68,7 @@ function App() {
         </Suspense>
       </ErrorBoundary> */}
       {/* Count Component  */}
-      <Counter></Counter>;
+      {/* <Counter></Counter> */}
     </div>
   );
 }
