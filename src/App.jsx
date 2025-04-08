@@ -49,12 +49,15 @@ const fetchProducts = fetch("https://fakestoreapi.com/products").then((res) =>
 const bottlesPromise = fetch("bottles.json").then((res) => res.json());
 
 function App() {
-  const [bookmark, setBookmark] = useState([]);
+  // const [bookmark, setBookmark] = useState([]);
 
-  const handleBookmark = (blog) => {
-    setBookmark([...bookmark, blog]);
-  };
-  console.log(bookmark);
+  // const handleBookmark = (blog) => {
+  //   setBookmark([...bookmark, blog]);
+  // };
+  // console.log(bookmark);
+
+  // const [color, setColor] = useState("red");
+  // console.log(color);
   return (
     <div>
       {/* <NavBar></NavBar>
@@ -85,7 +88,7 @@ function App() {
       </ErrorBoundary> */}
       {/* Count Component  */}
       {/* <Counter></Counter> */}
-      <Test></Test>
+      {/* <Test setColor={setColor}></Test> */}
     </div>
   );
 }
