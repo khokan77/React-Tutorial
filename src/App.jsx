@@ -38,7 +38,8 @@ const fetchPosts = async () => {
   return res.json();
 };
 
-const countriesPromise = fetch("https://restcountries.com/v3.1/independent?status=true"
+const countriesPromise = fetch(
+  "https://restcountries.com/v3.1/independent?status=true"
 ).then((res) => res.json());
 
 const fetchProducts = fetch("https://fakestoreapi.com/products").then((res) =>
@@ -48,10 +49,25 @@ const fetchProducts = fetch("https://fakestoreapi.com/products").then((res) =>
 const bottlesPromise = fetch("bottles.json").then((res) => res.json());
 
 function App() {
+  const [bookmark, setBookmark] = useState([]);
+
+  const handleBookmark = (blog) => {
+    setBookmark([...bookmark, blog]);
+  };
+  console.log(bookmark);
   return (
     <div>
-      <NavBar></NavBar>
-      <Blogs></Blogs>
+      {/* <NavBar></NavBar>
+
+      <div className="main-container flex text-center">
+        <div className="left-container w-[70%] ">
+          <Blogs handleBookmark={handleBookmark}></Blogs>
+        </div>
+        <div className="right-container w=[30%]">
+          <h2>Reading Time: 0</h2>
+          <h2>Bookbark Added: {bookmark.length}</h2>
+        </div>
+      </div> */}
       {/* <ErrorBoundary fallback={<h4>Eroor found..</h4>}>
         <Suspense>
           <Bottles bottlesPromise={bottlesPromise}></Bottles>
@@ -69,6 +85,7 @@ function App() {
       </ErrorBoundary> */}
       {/* Count Component  */}
       {/* <Counter></Counter> */}
+      <Test></Test>
     </div>
   );
 }
