@@ -1,0 +1,41 @@
+[
+    {
+      "id": 1,
+      "name": "Free",
+      "price": "$0",
+      "description": "Great for individuals trying out the platform.",
+      "features": [
+        "Basic market data",
+        "Access to latest news",
+        "Limited chart views",
+        "Email support"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Pro",
+      "price": "$19/month",
+      "description": "Perfect for active traders and analysts.",
+      "features": [
+        "Real-time market data",
+        "Advanced charting tools",
+        "Market summary reports",
+        "Priority email support",
+        "Watchlist alerts"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Enterprise",
+      "price": "Custom pricing",
+      "description": "Tailored solutions for institutions or large teams.",
+      "features": [
+        "All Pro features",
+        "Dedicated account manager",
+        "API access for stock data",
+        "Team collaboration tools",
+        "24/7 premium support"
+      ]
+    }
+  ]
+  
