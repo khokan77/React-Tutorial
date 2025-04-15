@@ -1,0 +1,11 @@
+nav a{
+    color: tomato;
+}
+
+ /* .active{
+    @apply underline
+ } */
+
+.active{
+   text-decoration: underline;
+}
