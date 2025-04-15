@@ -9,6 +9,6 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/* <App />
     <HomePage/> */}
-    <App2/>
+    {/* <App2/> */}
   </StrictMode>
 );
