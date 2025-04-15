@@ -11,8 +11,9 @@ import { ErrorBoundary } from "react-error-boundary";
 import Users2 from "./components3/Users/users2";
 import UserDetails from "./components3/UserDetails/UserDetails";
 
-const userPromise = fetch('https://jsonplaceholder.typicode.com/users')
-                    .then(res => res.json())
+const userPromise = fetch("https://jsonplaceholder.typicode.com/users").then(
+  (res) => res.json()
+);
 const router = createBrowserRouter([
   {
     path: "/",
@@ -20,25 +21,31 @@ const router = createBrowserRouter([
     children: [
       { index: true, Component: Home },
       { path: "mobiles", Component: Mobiles },
-      { path: "laptops",  Component: Laptops },
-      { 
+      { path: "laptops", Component: Laptops },
+      {
         path: "Users",
-        loader:  () =>  fetch('https://jsonplaceholder.typicode.com/users'),
-        Component: Users ,
+        loader: () => fetch("https://jsonplaceholder.typicode.com/users"),
+        Component: Users,
       },
       {
-        path:"Users2",
-        element: 
+        path: "Users2",
+        element: (
           <Suspense fallback={<h2>Loading..</h2>}>
-              <Users2 userPromise={userPromise} ></Users2>
+            <Users2 userPromise={userPromise}></Users2>
           </Suspense>
+        ),
       },
       {
-        path:"users/:userId",
-        loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
-        Component: UserDetails
-      }
+        path: "users/:userId",
+        loader: ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
+        Component: UserDetails,
+      },
     ],
+  },
+  {
+    path: "*",
+    element: <h3>404 not found</h3>,
   },
 ]);
 
