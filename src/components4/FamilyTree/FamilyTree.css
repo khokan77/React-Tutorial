@@ -1,0 +1,7 @@
+.family-tree div {
+  border: 2px solid tomato;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 20px;
+  text-align: center;
+}
