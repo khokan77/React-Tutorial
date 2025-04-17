@@ -9,3 +9,6 @@
     // 4. uncontrolled using useref 
 
     // 5. use custom hook
+
+    // 6. Create a context provider using createContext with default value.
+    // 7. Make sure to use export default with the context provider

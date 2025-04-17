@@ -1,16 +1,18 @@
-import React from "react";
 import Dad from "./Dad";
 import Mom from "./Mom";
 import Uncle from "./Uncle";
 import Aunt from "./Aunt";
 
-const Grandpa = () => {
+const Grandpa = ({asset}) => {
+
   return (
     <div>
       <h2>Grandpa</h2>
-      <Dad />
-      <Uncle />
-      <Aunt />
+      <section className="flex justify-center">
+        <Dad asset={asset}/>
+        <Uncle />
+        <Aunt />
+      </section>
     </div>
   );
 };
