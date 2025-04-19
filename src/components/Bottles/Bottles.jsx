@@ -29,7 +29,7 @@ const Bottles = ({ bottlesPromise }) => {
   const handleBuyCart = (bottle) => {
     const newCart = [...cart, bottle];
     setCart(newCart);
-    setCartToLocalStorage(bottle.id);
+    setCartToLocalStorage(bottle.id, "cart");
   };
 
   const handleRemoveCart = (id) => {

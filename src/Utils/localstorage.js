@@ -1,20 +1,23 @@
-const getCartFromLocalStorage = () => {
-  const cart = localStorage.getItem("cart");
+const getCartFromLocalStorage = (itemKey) => {
+  const cart = localStorage.getItem(itemKey);
   if (cart) {
-    const CartData = JSON.parse(cart);
-    return CartData;
+    const cartData = JSON.parse(cart);
+    return cartData;
   } else return [];
 };
 
-const setCartToLocalStorage = (id) => {
-  const cart = getCartFromLocalStorage();
-  const newCart = [...cart, id];
-  saveToLocalStorage(newCart);
+const setCartToLocalStorage = (id, itemKey) => {
+  const cart = getCartFromLocalStorage(itemKey);
+  if (!cart.includes(id)) {
+    const newCart = [...cart, id];
+    saveToLocalStorage(newCart, itemKey);
+    return true;
+  } else return false;
 };
 
-const saveToLocalStorage = (cart) => {
+const saveToLocalStorage = (cart, itemKey) => {
   const stringifyData = JSON.stringify(cart);
-  localStorage.setItem("cart", stringifyData);
+  localStorage.setItem(itemKey, stringifyData);
 };
 
 const removeFromStorge = (id) => {

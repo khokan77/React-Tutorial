@@ -1,6 +1,7 @@
 import React, { Suspense, use, useEffect, useState } from "react";
 import Book from "../Book/Book";
 import { HiH2 } from "react-icons/hi2";
+import Button from "../../UI/Button";
 
 const Books = ({ data }) => {
   const [showBooks, setShowBooks] = useState([]); // Show All or less enable
@@ -20,15 +21,13 @@ const Books = ({ data }) => {
         </Suspense>
       </div>
       <div className="text-center mt-4">
-        <button
+        <Button
           onClick={() => {
             setShowAll((prev) => !prev); // scroll to top while show less
             if (showAll) window.scroll(0, 400);
           }}
-          className="btn"
-        >
-          {showAll ? "Show Less" : "Show All"}
-        </button>
+          label={showAll ? "Show Less" : "Show All"}
+        />
       </div>
     </div>
   );

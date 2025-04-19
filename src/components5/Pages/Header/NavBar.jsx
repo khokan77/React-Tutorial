@@ -1,7 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link, NavLink } from "react-router";
+import Button from "../../UI/Button";
+import { IoMdCart } from "react-icons/io";
+import { FaClipboardList } from "react-icons/fa";
+import { CartContext } from "../../providers/context";
 
 const NavBar = () => {
+  const { cart } = useContext(CartContext);
+  console.log(cart.length);
   const links = (
     <div className="flex gap-3">
       <NavLink
@@ -57,7 +63,29 @@ const NavBar = () => {
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <ul className="menu menu-horizontal px-1 hidden lg:flex">
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-indigo-600 font-bold" : ""
+              }
+              to={"/Favourites"}
+            >
+              <FaClipboardList />
+            </NavLink>
+          </li>
+          <li className="relative">
+            <NavLink
+              className={({ isActive }) =>
+                isActive ? "text-indigo-600 font-bold" : ""
+              }
+              to={"/Cart"}
+            >
+              <IoMdCart />
+              <p className="absolute -top-1 right-0">{cart.length || 0}</p>
+            </NavLink>
+          </li>
+        </ul>
       </div>
     </div>
   );

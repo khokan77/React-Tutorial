@@ -8,12 +8,16 @@ const Home = () => {
   const [books, setBooks] = useState(data);
   const handleSearch = (e, text) => {
     e.preventDefault();
-    if (text != "") {
-      const newbooks = data.filter((book) =>
-        book.bookName.toLowerCase().includes(text.toLowerCase())
-      );
-      setBooks(newbooks);
-    } else setBooks(data);
+    if (text === " ") {
+      setBooks(data);
+      return;
+    }
+    const newbooks = data.filter(
+      (book) =>
+        book?.bookName?.toLowerCase().split(" ").includes(text.toLowerCase()) ||
+        book.category.toLowerCase().split(" ").includes(text.toLowerCase())
+    );
+    if (newbooks.length > 0) setBooks(newbooks);
   };
   return (
     <div>

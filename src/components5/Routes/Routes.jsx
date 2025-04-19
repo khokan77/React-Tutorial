@@ -5,6 +5,7 @@ import Home from "../Pages/Home/Home";
 import BookDetails from "../Pages/BookDetails/BookDetails";
 import About from "../Pages/About/About";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import Favourites from "../Pages/Favourites/Favourites";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        hydrateFallbackElement: <p>Loading.. Plz wait</p>,
         loader: () => fetch("booksData.json"),
         index: true,
         Component: Home,
@@ -26,6 +28,10 @@ export const router = createBrowserRouter([
       {
         path: "/About",
         Component: About,
+      },
+      {
+        path: "/Favourites",
+        Component: Favourites,
       },
     ],
   },
