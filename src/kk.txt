@@ -1,0 +1,27 @@
+React=> Hook => 
+1.useState()
+2.useEffect()
+
+1.useState()
+const(value,setValue) = useState()
+
+setValue(1),setValue(1)
+--------------
+value increment once
+
+setValue((value) => value+1),setValue((value) => value+1)
+--------------
+value increment twice
+
+2.useEffect():
+
+i. side effect (from outside data load)
+ii. life cycle control (mount-> ReRender ->unmount)
+
+ReRender => unmount => update => mount
+
+UseEffet(() => {},[]) => called once
+UseEffet(() => {},var1,var2) => called once and update based on change var1 and var2
+useEffect(() => {
+		return ()=> { console.log("unmount") }
+},[])

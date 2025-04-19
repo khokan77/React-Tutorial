@@ -6,15 +6,15 @@ const Book = ({ singleBook }) => {
   const { bookName, image, author, rating, category, tags, bookId } =
     singleBook;
   return (
-    <div>
+    <div className="flex items-center justify-center">
       <Link to={`/BookDetails/${bookId}`}>
         <div className="card bg-base-100 w-96 shadow-sm border p-6">
           <figure className="p-4 bg-gray-100 w-2/3 mx-auto">
             <img className="h-[166px]" src={image} alt="Shoes" />
           </figure>
           <div className="flex justify-center gap-3 mt-3">
-            {tags.map((tag) => (
-              <p>{tag}</p>
+            {tags.map((tag, index) => (
+              <p key={index}>{tag}</p>
             ))}
           </div>
           <div className="card-body">

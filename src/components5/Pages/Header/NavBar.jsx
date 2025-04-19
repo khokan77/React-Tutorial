@@ -1,16 +1,26 @@
 import React from "react";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const NavBar = () => {
   const links = (
-    <>
-      <Link to={"/"} className="m-2">
+    <div className="flex gap-3">
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-indigo-600 font-bold" : ""
+        }
+        to={"/"}
+      >
         Home
-      </Link>
-      <Link to={"/about"} className="m-2">
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive ? "text-indigo-600 font-bold" : ""
+        }
+        to={"/about"}
+      >
         About
-      </Link>
-    </>
+      </NavLink>
+    </div>
   );
 
   return (

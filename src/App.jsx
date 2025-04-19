@@ -56,7 +56,7 @@ function App() {
   // };
   // console.log(bookmark);
 
-  // const [color, setColor] = useState("red");
+  const [color, setColor] = useState("red");
   // console.log(color);
   return (
     <div>
@@ -88,7 +88,7 @@ function App() {
       </ErrorBoundary> */}
       {/* Count Component  */}
       {/* <Counter></Counter> */}
-      {/* <Test setColor={setColor}></Test> */}
+      <Test setColor={setColor}></Test>
     </div>
   );
 }
