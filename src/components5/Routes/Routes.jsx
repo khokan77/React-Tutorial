@@ -31,6 +31,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/Favourites",
+        loader: () => fetch("booksData.json"),
         Component: Favourites,
       },
     ],

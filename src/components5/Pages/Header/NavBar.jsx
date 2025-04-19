@@ -7,7 +7,6 @@ import { CartContext } from "../../providers/context";
 
 const NavBar = () => {
   const { cart } = useContext(CartContext);
-  console.log(cart.length);
   const links = (
     <div className="flex gap-3">
       <NavLink
@@ -57,7 +56,7 @@ const NavBar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl">BookShop</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>

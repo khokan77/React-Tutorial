@@ -20,11 +20,12 @@ const saveToLocalStorage = (cart, itemKey) => {
   localStorage.setItem(itemKey, stringifyData);
 };
 
-const removeFromStorge = (id) => {
-  const cart = getCartFromLocalStorage();
+const removeFromStorge = (id, fav) => {
+  console.log(fav);
+  const cart = getCartFromLocalStorage(fav);
   if (cart) {
     const remaingCart = cart.filter((remaingid) => remaingid !== id);
-    saveToLocalStorage(remaingCart);
+    saveToLocalStorage(remaingCart, fav);
   }
 };
 

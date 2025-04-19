@@ -88,7 +88,7 @@ function App() {
       </ErrorBoundary> */}
       {/* Count Component  */}
       {/* <Counter></Counter> */}
-      <Test setColor={setColor}></Test>
+      {/* <Test setColor={setColor}></Test> */}
     </div>
   );
 }

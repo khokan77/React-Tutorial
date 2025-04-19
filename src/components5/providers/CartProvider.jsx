@@ -6,7 +6,6 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   useEffect(() => {
     const carts = getCartFromLocalStorage("Fav");
-    console.log(carts);
     setCart(carts);
   }, []);
   return (

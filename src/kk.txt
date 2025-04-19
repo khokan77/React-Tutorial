@@ -25,3 +25,6 @@ UseEffet(() => {},var1,var2) => called once and update based on change var1 and 
 useEffect(() => {
 		return ()=> { console.log("unmount") }
 },[])
+
+TODO: 
+# BookShop remove button functionality
