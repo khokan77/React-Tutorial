@@ -3,7 +3,7 @@ import Book from "../Book/Book";
 import { HiH2 } from "react-icons/hi2";
 import Button from "../../UI/Button";
 
-const Books = ({ data }) => {
+const Books = ({ data, deletable }) => {
   const [showBooks, setShowBooks] = useState([]); // Show All or less enable
   const [showAll, setShowAll] = useState(false); // Show All or less enable
   useEffect(() => {
@@ -29,6 +29,17 @@ const Books = ({ data }) => {
           label={showAll ? "Show Less" : "Show All"}
         />
       </div>
+      {deletable && (
+        <div
+          onClick={() => handleRemove(book.bookId, "Fav")}
+          className="bg-gray-900 p-3 ml-5 rounded-full hover:bg-gray-300 group  cursor-pointer hover:scale-105 absolute -top-5 -right-5"
+        >
+          <MdDeleteForever
+            size={20}
+            className="text-gray-100 group-hover:text-gray-900"
+          />
+        </div>
+      )}
     </div>
   );
 };

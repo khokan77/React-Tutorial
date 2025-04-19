@@ -31,7 +31,8 @@ export const router = createBrowserRouter([
       },
       {
         path: "/Favourites",
-        loader: () => fetch("booksData.json"),
+        // hydrateFallbackElement: <p>Loading.. Plz wait</p>,
+        // loader: () => fetch("booksData.json"),
         Component: Favourites,
       },
     ],

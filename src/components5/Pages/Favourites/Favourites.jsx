@@ -9,28 +9,40 @@ import {
   removeCart,
 } from "../../../Utils/localstorage";
 
+const fetchAuctions = fetch("booksData.json").then((response) =>
+  response.json()
+);
+
 const Favourites = () => {
-  const data = useLoaderData();
-  const { cart } = useContext(CartContext);
+  //const data = useLoaderData();
+  const { cart, setCart } = useContext(CartContext);
+  const [data, setData] = useState([]);
   const [favourites, setFavourite] = useState([]);
 
   useEffect(() => {
-    const favorite = data.filter((book) => cart.includes(book.bookId));
-    setFavourite(favorite);
+    fetchAuctions.then((data) => {
+      const filteredData = data.filter((item) => cart.includes(item.bookId));
+      setData(filteredData);
+    });
   }, []);
 
   const handleRemove = (id, fav) => {
     removeCart(id, fav);
-    const favorite = getCartFromLocalStorage(fav);
+    const cart = getCartFromLocalStorage(fav);
+    setCart(cart);
+    const favorite = data.filter((book) => cart.includes(book.bookId));
     console.log(favorite);
-    setFavourite(favorite);
+    setData(favorite);
   };
   return (
     <div>
-      {<h2>{favourites.length}</h2>}
+      {<h2>{data.length}</h2>}
       <div className="grid grid-cols-1 gap-3">
-        {favourites.map((book) => (
-          <div className="card bg-base-100 w-96 shadow-sm border p-6">
+        {data.map((book) => (
+          <div
+            key={book.bookId}
+            className="card bg-base-100 w-96 shadow-sm border p-6"
+          >
             <figure className="p-4 bg-gray-100 w-2/3 mx-auto">
               <img className="h-[166px]" src={book.image} alt="Shoes" />
             </figure>
