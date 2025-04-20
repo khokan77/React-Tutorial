@@ -1,11 +1,12 @@
 import React, { useContext } from "react";
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useInRouterContext } from "react-router";
 import Button from "../../UI/Button";
 import { IoMdCart } from "react-icons/io";
 import { FaClipboardList } from "react-icons/fa";
-import { CartContext } from "../../providers/context";
+import { CartContext, UserContext } from "../../providers/context";
 
 const NavBar = () => {
+  const {user} = useContext(UserContext)
   const { cart } = useContext(CartContext);
   const links = (
     <div className="flex gap-3">
@@ -83,6 +84,9 @@ const NavBar = () => {
               <IoMdCart />
               <p className="absolute -top-1 right-0">{cart.length || 0}</p>
             </NavLink>
+          </li>
+          <li>
+            <p>User: { user?.name }</p>
           </li>
         </ul>
       </div>
