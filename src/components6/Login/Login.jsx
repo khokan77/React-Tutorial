@@ -27,6 +27,10 @@ const Login = () => {
     signInWithPopup(auth, providerGitHub)
       .then((result) => {
         console.log(result);
+        if(result.user.providerData.length > 0){
+        result.user.email = result.user.providerData[0].email;
+        result.user.displayName = result.user.providerData[0].displayName;
+        }
         setUser(result.user)
       })
       .catch((error) => {
@@ -46,16 +50,6 @@ const Login = () => {
       })
   }
 
-  const handleSignOutGitHub = () => {
-    signOut(auth)
-      .then(() => {
-          console.log('Signout completed')
-          setUser(null)
-      })
-      .catch(() => {
-
-      })
-  }
   return (
     <div>
      
@@ -71,6 +65,7 @@ const Login = () => {
       { user && <div>
         <p>{user.displayName}</p> 
         <p>{user.email} </p> 
+        <img src={user.photoURL} alt="" />
         </div>
       }
       
