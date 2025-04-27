@@ -1,0 +1,13 @@
+nav a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+nav a.active {
+  text-decoration: underline;
+  color: red;
+}
+
+nav ul {
+  text-decoration: none;
+}
