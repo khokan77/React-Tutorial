@@ -2,8 +2,10 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router";
 import Root from "./components6/Root";
-import Login from "./components6/Login/Login";
-import Home from "./components6/Home/Home";
+import Home from "./components6/pages/Home/Home";
+import Login from "./components6/pages/Login/Login";
+import "./index.css";
+import About from "./components6/pages/Order/About/About";
 
 const router = createBrowserRouter([
   {
@@ -20,10 +22,14 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "about",
+    Component: About,
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </StrictMode>
+  // <StrictMode>
+  <RouterProvider router={router}></RouterProvider>
+  // </StrictMode>
 );
