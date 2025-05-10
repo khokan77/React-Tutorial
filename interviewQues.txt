@@ -1,0 +1,108 @@
+// Skills Mind Mapper
+1. How can you achieve component reusability in React? Provide at least two strategies or patterns you would use.
+2. You have a `<div>` that contains a list of items, and it has a custom data attribute `data-item-count` which holds the number of items. How would you use JavaScript to display an alert showing the item count when a button is clicked?
+3. Write a JavaScript function named `fetchData` that uses the Fetch API to retrieve JSON data from a given URL. If the Fetch API is not supported by the user's browser, the function should fall back to using XMLHttpRequest to achieve the same result. Your function should return a promise that resolves with the data. Demonstrate the use of this function with a sample URL.
+// **************
+
+
+1. Explain the concept of "lifting state up" in React. Provide an example of when you would use this pattern.
+2. You have a form with multiple input fields, and you want to validate the inputs before submission. How would you implement this in React? Provide a code example.
+3. Describe the difference between controlled and uncontrolled components in React. Provide an example of each.
+4. You are building a simple counter application in React. How would you implement the increment and decrement functionality using hooks? Provide a code example.
+5. Explain the purpose of the `useEffect` hook in React. Provide an example of how you would use it to fetch data from an API when a component mounts.
+6. You have a list of items that can be filtered based on a search input. How would you implement this functionality in React? Provide a code example.
+7. Describe the concept of "context" in React. How would you use it to manage global state in a React application? Provide a code example.
+8. You are building a simple to-do list application in React. How would you implement the ability to add, remove, and mark items as completed? Provide a code example.
+9. Explain the concept of "higher-order components" (HOCs) in React. Provide an example of how you would use an HOC to enhance a component's functionality.
+10. You are building a responsive navigation menu in React. How would you implement a mobile-friendly version that collapses into a hamburger menu? Provide a code example.
+11. Describe the purpose of the `useReducer` hook in React. How would you use it to manage complex state logic in a component? Provide a code example.
+12. You are building a simple e-commerce application in React. How would you implement a shopping cart feature that allows users to add and remove items? Provide a code example.
+13. Explain the concept of "React Router" and how it is used to manage navigation in a React application. Provide an example of how you would set up routing for a simple application with multiple pages.
+14. You are building a form with multiple steps (multi-step form) in React. How would you implement the ability to navigate between steps and validate inputs? Provide a code example.  
+15. Describe the purpose of the `useMemo` and `useCallback` hooks in React. How would you use them to optimize performance in a component? Provide a code example.
+16. You are building a simple chat application in React. How would you implement real-time messaging using WebSockets? Provide a code example.
+17. Explain the concept of "React Fragments" and how they can be used to group multiple elements without adding extra nodes to the DOM. Provide a code example.
+18. You are building a simple image gallery in React. How would you implement the ability to view images in a modal when clicked? Provide a code example.   
+19. Describe the purpose of the `useLayoutEffect` hook in React. How does it differ from `useEffect`, and when would you use it? Provide a code example.
+20. You are building a simple quiz application in React. How would you implement the ability to track user answers and calculate the score at the end? Provide a code example.
+21. Explain the concept of "React Portals" and how they can be used to render components outside of their parent hierarchy. Provide a code example.
+22. You are building a simple weather application in React. How would you implement the ability to fetch and display weather data from an external API? Provide a code example.
+23. Describe the purpose of the `useImperativeHandle` hook in React. How would you use it to customize the instance value of a component? Provide a code example.
+24. You are building a simple authentication flow in React. How would you implement user login and logout functionality using context and hooks? Provide a code example.
+25. Explain the concept of "React Suspense" and how it can be used to handle asynchronous loading of components. Provide a code example.
+26. You are building a simple file upload component in React. How would you implement the ability to select and upload files to a server? Provide a code example.
+27. Describe the purpose of the `useRef` hook in React. How would you use it to access a DOM element or store mutable values? Provide a code example.
+28. You are building a simple pagination component in React. How would you implement the ability to navigate between pages and display the current page number? Provide a code example.
+29. Explain the concept of "React Error Boundaries" and how they can be used to handle errors in a React application. Provide a code example.
+30. You are building a simple drag-and-drop file upload component in React. How would you implement the ability to drag files from the desktop and drop them into the application? Provide a code example.
+31. Describe the purpose of the `useContext` hook in React. How would you use it to access context values in a functional component? Provide a code example.
+32. You are building a simple notification system in React. How would you implement the ability to display and dismiss notifications? Provide a code example.
+33. Explain the concept of "React.memo" and how it can be used to optimize performance in functional components. Provide a code example.
+34. You are building a simple infinite scroll component in React. How would you implement the ability to load more items as the user scrolls down? Provide a code example.
+35. Describe the purpose of the `useDebugValue` hook in React. How would you use it to display a label for custom hooks in React DevTools? Provide a code example.
+36. You are building a simple rating component in React. How would you implement the ability to select a rating and display it visually? Provide a code example.
+37. Explain the concept of "React.lazy" and how it can be used to implement code splitting in a React application. Provide a code example.
+38. You are building a simple search component in React. How would you implement the ability to filter a list of items based on user input? Provide a code example.
+39. Describe the purpose of the `useTransition` hook in React. How would you use it to manage concurrent state updates? Provide a code example.
+40. You are building a simple tooltip component in React. How would you implement the ability to display a tooltip when hovering over an element? Provide a code example.
+41. Explain the concept of "React DevTools" and how it can be used to debug and profile React applications. Provide an example of how you would use it to inspect component hierarchy and state.
+42. You are building a simple form validation library in React. How would you implement the ability to validate multiple fields and display error messages? Provide a code example.
+43. Describe the purpose of the `useDeferredValue` hook in React. How would you use it to defer updates to a value until after rendering? Provide a code example.
+44. You are building a simple breadcrumb navigation component in React. How would you implement the ability to display the current path and navigate back to previous pages? Provide a code example.
+45. Explain the concept of "React Strict Mode" and how it can be used to identify potential problems in a React application. Provide an example of how you would enable it in your application.
+46. You are building a simple accordion component in React. How would you implement the ability to expand and collapse sections? Provide a code example.
+47. Describe the purpose of the `useInsertionEffect` hook in React. How would you use it to inject styles into the DOM before rendering? Provide a code example.
+48. You are building a simple image carousel component in React. How would you implement the ability to navigate between images and display the current image index? Provide a code example.
+49. Explain the concept of "React Profiler" and how it can be used to measure the performance of React applications. Provide an example of how you would use it to identify performance bottlenecks.
+50. You are building a simple countdown timer component in React. How would you implement the ability to start, pause, and reset the timer? Provide a code example.
+51. Describe the purpose of the `useSyncExternalStore` hook in React. How would you use it to subscribe to external stores and manage state? Provide a code example.
+52. You are building a simple multi-select dropdown component in React. How would you implement the ability to select multiple options and display the selected values? Provide a code example.
+53. Explain the concept of "React Concurrent Mode" and how it can be used to improve the performance of React applications. Provide an example of how you would enable it in your application.
+54. You are building a simple date picker component in React. How would you implement the ability to select a date and display it in a formatted way? Provide a code example.
+55. Describe the purpose of the `useId` hook in React. How would you use it to generate unique IDs for components? Provide a code example.
+56. You are building a simple progress bar component in React. How would you implement the ability to display the progress percentage and animate the bar? Provide a code example.
+57. Explain the concept of "React Server Components" and how they can be used to improve the performance of server-rendered applications. Provide an example of how you would use them in your application.
+58. You are building a simple tab navigation component in React. How would you implement the ability to switch between tabs and display the corresponding content? Provide a code example.
+59. Describe the purpose of the `useLayoutEffect` hook in React. How does it differ from `useEffect`, and when would you use it? Provide a code example.
+60. You are building a simple color picker component in React. How would you implement the ability to select a color and display it visually? Provide a code example.
+61. Explain the concept of "React Context API" and how it can be used to manage global state in a React application. Provide an example of how you would use it to share data between components.
+62. You are building a simple rating component in React. How would you implement the ability to select a rating and display it visually? Provide a code example.
+63. Describe the purpose of the `useMemo` and `useCallback` hooks in React. How would you use them to optimize performance in a component? Provide a code example.
+64. You are building a simple image upload component in React. How would you implement the ability to select and preview images before uploading? Provide a code example.
+65. Explain the concept of "React Refs" and how they can be used to access DOM elements or store mutable values. Provide an example of how you would use refs in a functional component.
+66. You are building a simple form with validation in React. How would you implement the ability to validate inputs and display error messages? Provide a code example.
+67. Describe the purpose of the `useReducer` hook in React. How would you use it to manage complex state logic in a component? Provide a code example.
+68. You are building a simple modal component in React. How would you implement the ability to open and close the modal, and pass data to it? Provide a code example.
+69. Explain the concept of "React Fragments" and how they can be used to group multiple elements without adding extra nodes to the DOM. Provide an example of how you would use fragments in a component.
+70. You are building a simple notification system in React. How would you implement the ability to display and dismiss notifications? Provide a code example.
+71. Describe the purpose of the `useImperativeHandle` hook in React. How would you use it to customize the instance value of a component? Provide a code example.
+72. You are building a simple drag-and-drop file upload component in React. How would you implement the ability to drag files from the desktop and drop them into the application? Provide a code example.
+73. Explain the concept of "React Portals" and how they can be used to render components outside of their parent hierarchy. Provide an example of how you would use portals in a component.
+74. You are building a simple infinite scroll component in React. How would you implement the ability to load more items as the user scrolls down? Provide a code example.
+75. Describe the purpose of the `useTransition` hook in React. How would you use it to manage concurrent state updates? Provide a code example.
+76. You are building a simple breadcrumb navigation component in React. How would you implement the ability to display the current path and navigate back to previous pages? Provide a code example.
+77. Explain the concept of "React DevTools" and how it can be used to debug and profile React applications. Provide an example of how you would use it to inspect component hierarchy and state.
+78. You are building a simple quiz application in React. How would you implement the ability to track user answers and calculate the score at the end? Provide a code example.
+79. Describe the purpose of the `useDeferredValue` hook in React. How would you use it to defer updates to a value until after rendering? Provide a code example.
+80. You are building a simple countdown timer component in React. How would you implement the ability to start, pause, and reset the timer? Provide a code example.
+81. Explain the concept of "React Suspense" and how it can be used to handle asynchronous loading of components. Provide a code example.
+82. You are building a simple file upload component in React. How would you implement the ability to select and upload files to a server? Provide a code example.
+83. Describe the purpose of the `useInsertionEffect` hook in React. How would you use it to inject styles into the DOM before rendering? Provide a code example.
+84. You are building a simple multi-select dropdown component in React. How would you implement the ability to select multiple options and display the selected values? Provide a code example.
+85. Explain the concept of "React Concurrent Mode" and how it can be used to improve the performance of React applications. Provide an example of how you would enable it in your application.
+86. You are building a simple date picker component in React. How would you implement the ability to select a date and display it in a formatted way? Provide a code example.
+87. Describe the purpose of the `useId` hook in React. How would you use it to generate unique IDs for components? Provide a code example.
+88. You are building a simple progress bar component in React. How would you implement the ability to display the progress percentage and animate the bar? Provide a code example.
+89. Explain the concept of "React Server Components" and how they can be used to improve the performance of server-rendered applications. Provide an example of how you would use them in your application.
+90. You are building a simple tab navigation component in React. How would you implement the ability to switch between tabs and display the corresponding content? Provide a code example.
+91. Describe the purpose of the `useLayoutEffect` hook in React. How does it differ from `useEffect`, and when would you use it? Provide a code example.
+92. You are building a simple color picker component in React. How would you implement the ability to select a color and display it visually? Provide a code example.
+93. Explain the concept of "React Context API" and how it can be used to manage global state in a React application. Provide an example of how you would use it to share data between components.
+94. You are building a simple rating component in React. How would you implement the ability to select a rating and display it visually? Provide a code example.
+95. Describe the purpose of the `useMemo` and `useCallback` hooks in React. How would you use them to optimize performance in a component? Provide a code example.
+96. You are building a simple image upload component in React. How would you implement the ability to select and preview images before uploading? Provide a code example.
+97. Explain the concept of "React Refs" and how they can be used to access DOM elements or store mutable values. Provide an example of how you would use refs in a functional component.
+98. You are building a simple form with validation in React. How would you implement the ability to validate inputs and display error messages? Provide a code example.
+99. Describe the purpose of the `useReducer` hook in React. How would you use it to manage complex state logic in a component? Provide a code example.
+100. You are building a simple modal component in React. How would you implement the ability to open and close the modal, and pass data to it? Provide a code example.
+
